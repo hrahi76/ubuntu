@@ -1,32 +1,12 @@
-#
-# Ubuntu Dockerfile
-#
-# https://github.com/dockerfile/ubuntu
-#
-
-# Pull base image.
-FROM ubuntu:14.04
-
-# Install.
-RUN \
-  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
-  apt-get update && \
-  apt-get -y upgrade && \
-  apt-get install -y build-essential && \
-  apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget && \
-  rm -rf /var/lib/apt/lists/*
-
-# Add files.
-ADD root/.bashrc /root/.bashrc
-ADD root/.gitconfig /root/.gitconfig
-ADD root/.scripts /root/.scripts
-
-# Set environment variables.
+RUN apt-get update -y
+RUN apt-get install apache2 -y
+RUN systemctl start apache2
+RUN systemctl enable apache2
+RUN mkdir /var/www/html
+RUN echo 'ubuntu in a container' > /var/www/html/index.html
 ENV HOME /root
-
-# Define working directory.
 WORKDIR /root
-
-# Define default command.
 CMD ["bash"]
+EXPOSE 8080
+~                                                                                                       
+~                   
