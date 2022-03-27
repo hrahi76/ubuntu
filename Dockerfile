@@ -9,5 +9,12 @@ ENV HOME /root
 WORKDIR /root
 CMD ["bash"]
 EXPOSE 8080
-~                                                                                                       
-~                   
+
+
+
+
+
+
+
+
+
