@@ -1,4 +1,4 @@
-ubuntu {
+ubuntu:18.04 {
   agent any
   
   environment {
@@ -7,7 +7,7 @@ ubuntu {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t hrahi/hr-ubuntu:latest .'
+        sh 'docker build -t hrahi/hr-ubuntu:18.04 .'
       }
     }
     stage('Login') {
@@ -17,7 +17,7 @@ ubuntu {
     }
     stage('Push') {
       steps {
-        sh 'docker push hrahi/hr-ubuntu:latest'
+        sh 'docker push hrahi/hr-ubuntu:18.04'
       }
     }
   }
