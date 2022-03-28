@@ -1,4 +1,4 @@
-ubuntu {
+ubuntu:latest {
   agent any
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
