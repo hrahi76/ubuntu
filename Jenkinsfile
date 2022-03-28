@@ -1,8 +1,6 @@
-ubuntu:latest {
+ubuntu {
   agent any
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
-  }
+  
   environment {
     DOCKERHUB_CREDENTIALS = credentials('hrahi-dockerhub')
   }
@@ -19,7 +17,7 @@ ubuntu:latest {
     }
     stage('Push') {
       steps {
-        sh 'docker push hrahi/hr-alpine:latest'
+        sh 'docker push hrahi/hr-ubuntu:latest'
       }
     }
   }
