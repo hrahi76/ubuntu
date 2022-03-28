@@ -1,4 +1,4 @@
-ubuntu:18.04 {
+pipeline {
   agent any
   
   environment {
