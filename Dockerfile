@@ -6,7 +6,7 @@ RUN systemctl enable apache2
 RUN mkdir /var/www/html
 RUN echo 'ubuntu in a docker container' > /var/www/html/index.html
 ENV HOME /root
-WORKDIR /root
+
 CMD ["bash"]
 EXPOSE 8080
 
